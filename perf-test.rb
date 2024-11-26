@@ -1,7 +1,7 @@
 require 'rubyserial'
 
 names = ['TH-D75', 'VR-N76']
-radio1 = Serial.new('/dev/cu.usbmodem1101', 9600, 8, :none) # TH-D75
+radio1 = Serial.new('/dev/cu.usbmodem21201', 9600, 8, :none) # TH-D75
 radio2 = Serial.new('/dev/cu.VR-N76', 9600, 8, :none)
 #radio1 = Serial.new('/dev/cu.UV-PRO', 9600, 8, :none)
 
@@ -66,6 +66,9 @@ end
             sleep(approximate_transmit_time)
         end
     end
+    # wait for user input to continue
+    puts "Press ENTER to reverse the test"
+    gets
 end
 
 sleep(10)
